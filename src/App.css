@@ -315,6 +315,14 @@ body{
   margin: 0 auto;
   min-width: 80%;
 	}
+	.info-page{
+  background-color: var(--inv-text);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+	}
 }
 /*Home page*/
 .home{
