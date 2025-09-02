@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaUserCircle } from 'react-icons/fa'
 import {FaExclamationTriangle } from "react-icons/fa";
@@ -18,10 +18,7 @@ const SignIn = () => {
       const handleSignin = async (event) => {
         event.preventDefault();
         try{
-          const response = await axios.post(`${API_URL}/api/signup`, {
-            username,
-            password
-          });
+          const response = await api.post("/api/signin", { username, password });
           const token = response.data.token;
           localStorage.setItem('token', token)
           navigate('/info');

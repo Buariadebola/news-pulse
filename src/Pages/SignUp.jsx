@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../api'
 import { FaExclamationTriangle, FaUserCircle} from 'react-icons/fa'
 import { BiLock} from 'react-icons/bi';
 import { CgMail } from 'react-icons/cg';
@@ -17,11 +17,7 @@ const SignUp = () => {
   const handleSignup = async (event) => {
     event.preventDefault();
     try{
-      const response = await axios.post(`${API_URL}/api/signup`, {
-        username,
-        email,
-        password
-      });
+      const response = await api.post("/api/signup", { username, email, password });
       console.log(response.data)
       setError(null);
     alert("Signup successful! You can now sign in.");
