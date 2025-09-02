@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['https://news-pulse.vercel.app'],
+  origin: ['https://newspulse-by-renova.vercel.app'],
   credentials: true
 }));
 
