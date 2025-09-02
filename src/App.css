@@ -310,6 +310,12 @@ body{
   align-items: center;
   animation: scale-up 1s ease-in-out;
 }
+@media only screen and (max-width:768px) {
+	.info-page .info{
+  margin: 0 auto;
+  min-width: 80%;
+	}
+}
 /*Home page*/
 .home{
   background-image: var(--background);
