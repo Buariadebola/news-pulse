@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_URL || '/news-pulse',
+  base: process.env.VITE_BASE_URL || '/',
   server: {
     proxy: {
       '/api': 'https://news-pulse.vercel.app'
