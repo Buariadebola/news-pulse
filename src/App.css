@@ -2327,6 +2327,9 @@ body{
   border-radius: 10px 0 0 10px;
   gap: 5px;
 }
+	.login-left button{
+  transform: scale(0.7);
+}
 .login-right{
   order: 1;
   width: 100%;
