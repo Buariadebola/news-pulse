@@ -2325,7 +2325,7 @@ body{
 }
 .login-left .login-content{
   border-radius: 10px 0 0 10px;
-  gap: 5px;
+  gap: 0px;
 }
 	.login-left button{
   transform: scale(0.7);
