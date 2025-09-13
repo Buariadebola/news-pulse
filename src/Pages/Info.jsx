@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { ThemeContext } from '../Context/ThemeProvider';
 import { GiClick } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
@@ -17,11 +17,20 @@ const Info = () => {
       alert('Oga just select "US" and continue, no need to overdo');
     }
 
+    const [username, setUsername] = useState('');
+    
+      useEffect(() => {
+        const storedUsername = localStorage.getItem('username');
+        if (storedUsername) {
+          setUsername(storedUsername);
+        }
+      }, []);
+
   return (
     <div className='info-page'>
       <div className='info'>
         <h2>What's your name? </h2>
-        <input type="text" placeholder='Enter name...' value={name} onChange={(e) => setName(e.target.value)}/>
+        <input type="text" placeholder={`${username}`} value={name} onChange={(e) => setName(e.target.value)}/>
         <h3>your location?</h3>
         <input type="text" placeholder='Enter city' value={city} onChange={(e) => setCity(e.target.value)}/>
       </div>
