@@ -13,7 +13,7 @@ const XShareButton = ({ title, url }) => {
         href={XUrl}
         target="_blank"
         >
-        <button><BsShareFill/><FaTwitter style={{marginLeft: '5px'}}/></button>
+        <button className='x-share'><BsShareFill/><FaTwitter style={{marginLeft: '5px'}}/></button>
         </a>
     </>
   )

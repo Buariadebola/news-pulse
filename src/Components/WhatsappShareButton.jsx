@@ -13,7 +13,7 @@ const WhatsappShareButton = ({ title, url }) => {
         href={whatsappUrl}
         target="_blank"
         >
-        <button><BsShareFill/><FaWhatsapp style={{marginLeft: '5px'}}/></button>
+        <button className='whatsapp-share'><BsShareFill/><FaWhatsapp style={{marginLeft: '5px'}}/></button>
         </a>
     </>
   )

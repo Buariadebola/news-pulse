@@ -7,8 +7,8 @@ const LatestNewsCard = ({urlToImage, author, title, publishedAt, description}) =
     <div className='latest-card'>
       <img src={urlToImage} alt="" />
       <div className="card-content">
-        <XShareButton className="x-share" title={title} url={urlToImage}/>
-        <WhatsappShareButton className="whatsapp-share" title={title} url={urlToImage}/>
+        <XShareButton title={title} url={urlToImage}/>
+        <WhatsappShareButton title={title} url={urlToImage}/>
         <p className='latest-title'>{title}</p>
         <p className='latest-desc'>{description}</p>
         <p className='latest-date'>{publishedAt}</p>

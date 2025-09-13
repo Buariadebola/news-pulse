@@ -875,6 +875,7 @@ body{
   right: 20px;
   background-color: transparent;
   border: 0;
+  color: green;
 }
 .latest-news .latest-card .card-content .x-share{
   position: absolute;
