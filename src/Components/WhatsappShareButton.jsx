@@ -2,9 +2,9 @@ import React from 'react'
 import { BsShareFill } from 'react-icons/bs'
 import { FaWhatsapp } from "react-icons/fa";
 
-const WhatsappShareButton = ({ title, url }) => {
+const WhatsappShareButton = ({ title, url, img }) => {
 
-    const shareText = `${title} - ${url}`;
+    const shareText = `${<img src={img}/>} ${title} - ${url}`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 
   return (

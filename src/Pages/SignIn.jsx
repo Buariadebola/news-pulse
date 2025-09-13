@@ -21,6 +21,7 @@ const SignIn = () => {
           const response = await api.post("/api/signin", { username, password });
           const token = response.data.token;
           localStorage.setItem('token', token)
+          localStorage.setItem('username', username);
           navigate('/info');
         } catch (error) {
   setError(error.response?.data?.message || 'Error signing in');

@@ -27,11 +27,20 @@ const Hero = () => {
         return () => clearInterval(intervalId);
         }, []);
 
+        const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
 
   return (
     <div className='hero'>
       <div className="left-section">
-        <h1>Hi <span>{name ? name : ""}</span>, Welcome to News pulse</h1>
+        <h1>Hi <span>{name ? name : username}</span>, Welcome to News pulse</h1>
         <p>Your trusted source for breaking news, in-depth analysis, and comprehensive coverage of events that matter.</p>
         <button>Get Started <BsRocketTakeoffFill/></button>
       </div>

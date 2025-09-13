@@ -2,9 +2,9 @@ import React from 'react'
 import { BsShareFill } from 'react-icons/bs'
 import { FaTwitter } from 'react-icons/fa6';
 
-const XShareButton = ({ title, url }) => {
+const XShareButton = ({ title, url, img}) => {
 
-    const shareText = `${title} - ${url}`;
+    const shareText = `${<img src={img}/>} ${title} - ${url}`;
     const XUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   return (
