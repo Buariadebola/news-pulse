@@ -52,7 +52,7 @@ const SignUp = () => {
                 <h2>Hello, Friend!</h2>
                 <p>Enter your personal details and start a journey with us</p>
                 <p>Already have an account?</p>
-                <Link to="/"><button>Sign in</button></Link>
+                <Link to="/signin"><button>Sign in</button></Link>
             </div>
         </div>
         </div>

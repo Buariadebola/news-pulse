@@ -219,15 +219,6 @@ body{
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  animation: scale-up 1s ease-in-out;
-}
-@keyframes scale-up {
-  0%{
-    transform: scale(0.2);
-  }
-  100%{
-    transform: scale(1);
-  }
 }
 .info-page .info h3{
   color: var(--header-color);
@@ -318,6 +309,24 @@ body{
   justify-content: center;
   align-items: center;
   animation: scale-up 1s ease-in-out;
+}
+@media only screen and (max-width:768px) {
+	.info-page .info{
+  margin: 0 auto;
+  min-width: 80%;
+	}
+	.info-page{
+  background-color: var(--inv-text);
+  color: var(--text-color);
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+	}
+	.info-page .next-button{
+  width: 350px;
+	}
 }
 /*Home page*/
 .home{
@@ -561,6 +570,12 @@ body{
     width: 90%;
     height: 35vh;
   }
+  .hero .right-section .feature-image{
+  height: 35vh;
+}
+.hero .right-section .cover-bg{
+  height: 36vh;
+}
 }
 /*Home content*/
 
@@ -698,6 +713,11 @@ body{
   .breaking-news{
     width: 100vw;
   }
+	.breaking-news .post .post-content .post-title h2{
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
   .breaking-news .post{
     margin: 0 auto;
   width: 95%;
@@ -849,10 +869,17 @@ body{
   margin: 0;
   color: var(--text-color);
 }
-.latest-news .latest-card .card-content button{
+.latest-news .latest-card .card-content .whatsapp-share{
   position: absolute;
   top: 10px;
   right: 20px;
+  background-color: transparent;
+  border: 0;
+}
+.latest-news .latest-card .card-content .x-share{
+  position: absolute;
+  top: 10px;
+  left: 20px;
   background-color: transparent;
   border: 0;
 }
@@ -2334,7 +2361,10 @@ body{
 }
 .login-left .login-content{
   border-radius: 10px 0 0 10px;
-  gap: 5px;
+  gap: 0px;
+}
+	.login-left button{
+  transform: scale(0.7);
 }
 .login-right{
   order: 1;
