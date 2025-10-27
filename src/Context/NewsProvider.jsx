@@ -12,14 +12,14 @@ const NewsProvider = ({children}) => {
 
   const BASE_URL =
     import.meta.env.MODE === 'development'
-      ? 'http://localhost:3000'
+      ? 'http://localhost:3001'
       : 'https://news-pulse-backend.onrender.com';
   
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true);
       try{
-        const response = await fetch(`${BASE_URL}/api/v4/top-headlines?country=${country}&topic=${category}`);
+        const response = await fetch(`${BASE_URL}/api/news?country=${country}&topic=${category}`);
         const data = await response.json();
         setNews(Array.isArray(data.articles) ? data.articles : []);
       } catch (err) {

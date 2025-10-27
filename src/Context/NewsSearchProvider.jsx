@@ -11,7 +11,7 @@ const NewsSearchProvider = ({children}) => {
     
         const BASE_URL =
     import.meta.env.MODE === 'development'
-      ? 'http://localhost:3000'
+      ? 'http://localhost:3001'
       : 'https://news-pulse-backend.onrender.com';
 
       useEffect(() => {
