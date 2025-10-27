@@ -9,13 +9,17 @@ const NewsProvider = ({children}) => {
   const [error, setError] = useState('');
   const [category, setCategory] = useState('general');
   const [country, setCountry] = useState('us')
-  const apiKey = '01b76e73e54e1c3917c7e7d7b915cc4f';
+
+  const BASE_URL =
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:3000'
+      : 'https://news-pulse-backend.onrender.com';
   
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true);
       try{
-        const response = await fetch(`https://gnews.io/api/v4/top-headlines?country=${country}&topic=${category}&lang=en&token=${apiKey}`);
+        const response = await fetch(`${BASE_URL}/api/v4/top-headlines?country=${country}&topic=${category}`);
         const data = await response.json();
         setNews(Array.isArray(data.articles) ? data.articles : []);
       } catch (err) {
@@ -25,7 +29,7 @@ const NewsProvider = ({children}) => {
       }
     }
     fetchNews();
-  }, [category, country])
+  }, [category, country, BASE_URL])
 
     const handleChangeCategory = (newCategory) => {
     setCategory(newCategory);

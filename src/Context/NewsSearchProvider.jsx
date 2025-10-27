@@ -8,13 +8,17 @@ const NewsSearchProvider = ({children}) => {
       const [keyword, setKeyword] = useState('');
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState('');
-      const apiKey = '01b76e73e54e1c3917c7e7d7b915cc4f';
     
+        const BASE_URL =
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:3000'
+      : 'https://news-pulse-backend.onrender.com';
+
       useEffect(() => {
         const fetchNews = async () => {
           setLoading(true);
           try {
-            const response = await fetch(`https://gnews.io/api/v4/search?q=${keyword}&lang=en&token=${apiKey}`);
+            const response = await fetch(`${BASE_URL}/api/v4/search?q=${keyword}`);
           const data = await response.json();
           setSearchNews(Array.isArray(data.articles) ? data.articles : []);
           } catch (err) {
@@ -24,7 +28,7 @@ const NewsSearchProvider = ({children}) => {
           }
         }
         fetchNews();
-      }, [keyword])
+      }, [keyword, BASE_URL])
     
       const handleKeywordChange = (newKeyword) => {
         setKeyword(newKeyword);
